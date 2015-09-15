@@ -1,5 +1,5 @@
 {
-    "name": "aerialship/lightsaml",
+    "name": "zeretar/lightsaml",
     "license": "MIT",
     "description": "Light SAML2 php library",
     "autoload": {
@@ -12,6 +12,9 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~4.1"
+    },
+    "replace": {
+        "aerialship/lightsaml": "1.*"
     },
     "bin": ["bin/lightsaml"],
     "prefer-stable": true,
