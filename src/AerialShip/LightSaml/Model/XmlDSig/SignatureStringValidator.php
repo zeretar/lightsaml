@@ -93,7 +93,7 @@ class SignatureStringValidator extends Signature implements SignatureValidatorIn
             return false;
         }
 
-        if ($key->type !== \XMLSecurityKey::RSA_SHA1) {
+        if ($key->type !== \XMLSecurityKey::RSA_SHA256) {
             throw new SecurityException('Invalid key type for validating signature on query string');
         }
         if ($key->type !== $this->getAlgorithm()) {

@@ -16,7 +16,7 @@ class KeyHelper
      */
     static function createPrivateKey($key, $passphrase, $isFile = false, $isCert = false)
     {
-        $result = new \XMLSecurityKey(\XMLSecurityKey::RSA_SHA1, array('type'=>'private'));
+        $result = new \XMLSecurityKey(\XMLSecurityKey::RSA_SHA256, array('type'=>'private'));
         $result->passphrase = $passphrase;
         $result->loadKey($key, $isFile, $isCert);
 
@@ -29,7 +29,7 @@ class KeyHelper
      */
     static function createPublicKey(X509Certificate $certificate)
     {
-        $key = new \XMLSecurityKey(\XMLSecurityKey::RSA_SHA1, array('type'=>'public'));
+        $key = new \XMLSecurityKey(\XMLSecurityKey::RSA_SHA256, array('type'=>'public'));
         $key->loadKey($certificate->toPem(), false, true);
 
         return $key;
